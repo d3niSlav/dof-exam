@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: nginx-host
-          image: d3niSlav/nginx-host:%IMAGE-PLACEHOLDER%
+          image: d3nislav/nginx-host:%IMAGE-PLACEHOLDER%
           ports:
             - containerPort: 80

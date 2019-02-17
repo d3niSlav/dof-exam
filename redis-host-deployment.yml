@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: redis-host
-          image: d3niSlav/redis-host:%IMAGE-PLACEHOLDER%
+          image: d3nislav/redis-host:%IMAGE-PLACEHOLDER%
           ports:
             - containerPort: 6379

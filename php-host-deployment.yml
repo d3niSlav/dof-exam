@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: php-host
-          image: d3niSlav/php-host:%IMAGE-PLACEHOLDER%
+          image: d3nislav/php-host:%IMAGE-PLACEHOLDER%
           ports:
             - containerPort: 9000

@@ -40,7 +40,7 @@ spec:
   type: NodePort
   ports:
     - name: "31000"
-      port: 31000
+      port: 30913
       targetPort: 32377
   selector:
     io.kompose.service: php-host

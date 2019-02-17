@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-host
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-host
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: nginx-host
+    spec:
+      containers:
+        - name: nginx-host
+          image: d3niSlav/nginx-host:%IMAGE-PLACEHOLDER%
+          ports:
+            - containerPort: 80

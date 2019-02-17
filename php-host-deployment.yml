@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-host
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-host
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: php-host
+    spec:
+      containers:
+        - name: php-host
+          image: d3niSlav/php-host:%IMAGE-PLACEHOLDER%
+          ports:
+            - containerPort: 9000

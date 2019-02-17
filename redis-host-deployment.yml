@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-host
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-host
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: redis-host
+    spec:
+      containers:
+        - name: redis-host
+          image: d3niSlav/redis-host:%IMAGE-PLACEHOLDER%
+          ports:
+            - containerPort: 6379

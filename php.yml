@@ -41,6 +41,6 @@ spec:
   ports:
     - name: "31000"
       port: 31000
-      targetPort: 31000
+      targetPort: 32377
   selector:
     io.kompose.service: php-host
